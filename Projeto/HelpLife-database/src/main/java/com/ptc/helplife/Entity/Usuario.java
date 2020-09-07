@@ -18,6 +18,7 @@ public class Usuario {
 
     };
 
+    private String codigo;
     private Long id;
     private String nome;
     private String endereco;
@@ -29,7 +30,16 @@ public class Usuario {
     private String cep;
     private StatusUsuario status;
 
-    public Long getId() {
+    
+    public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -109,8 +119,12 @@ public class Usuario {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" + "id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", telefone=" + telefone + ", email=" + email + ", senha=" + senha + ", estado=" + estado + ", cidade=" + cidade + ", cep=" + cep + ", status=" + status + '}';
-    }
+	@Override
+	public String toString() {
+		return "Usuario [codigo=" + codigo + ", id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", telefone="
+				+ telefone + ", email=" + email + ", senha=" + senha + ", estado=" + estado + ", cidade=" + cidade
+				+ ", cep=" + cep + ", status=" + status + "]";
+	}
+
+   
 }

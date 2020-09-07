@@ -59,14 +59,14 @@
 					tornar a população mais conciente e voltada a ajudar o próximo. <br />
 				<h4 style="color: #000000">
 					<a style="color: #000000"
-						href="http://npdi.ddns.net:9005/helplife/service/cadastro/cadastroHemocentro/"><strong>clique
+						href="http://localhost:9005/helplife/service/cadastro/cadastroHemocentro/"><strong>clique
 							aqui</strong></a>, Caso você seja um Hemocentro, e cadastre-se, venha fazer
 					parte da nossa equipe.
 				</h4>
 				<br />
 				<h4 style="color: #000000">
 					<a style="color: #000000"
-						href="http://npdi.ddns.net:9005/helplife/service/cadastro/cadastroUsuario/"><strong>clique
+						href="http://localhost:9005/helplife/service/cadastro/cadastroUsuario/"><strong>clique
 							aqui</strong></a>, Caso você queira criar uma campanha e/ou solicitação, e
 					cadastre-se, venha fazer parte da nossa equipe.
 				</h4>

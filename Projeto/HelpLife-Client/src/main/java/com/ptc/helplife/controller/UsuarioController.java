@@ -25,6 +25,7 @@ import com.ptc.helplife.DAO.BaseImplementDAO;
 import com.ptc.helplife.DAO.CampanhaDAO;
 import com.ptc.helplife.DAO.TipoSanguineoDAO;
 import com.ptc.helplife.DAO.UsuarioDAO;
+import com.ptc.helplife.Entity.AlterarSenha;
 import com.ptc.helplife.Entity.Campanha;
 import com.ptc.helplife.Entity.TipoSanguineo;
 import com.ptc.helplife.Entity.Usuario;
@@ -262,7 +263,12 @@ public class UsuarioController {
 
 				}
 			}
-
+			
+			usuario.setSenha(user.get(0).getSenha());
+			// Seta a mesma senha do usuário
+			
+			
+			/*
 			String senha = usuario.getSenha();
 			if (senha != null && senha.length() < 6) {
 				errors.put("senha", "Tamanho minimo de 06 caracteres.");
@@ -270,7 +276,7 @@ public class UsuarioController {
 			String md5DeRamos = "uforasteiro";
 			senha += md5DeRamos;
 			usuario.setSenha(Criptografar.criptografar(senha));
-
+			*/
 			String estado = usuario.getEstado();
 			if (estado != null && estado.length() < 2) {
 				errors.put("estado", "Tamanho minimo de 02 caracteres.");
@@ -445,6 +451,7 @@ public class UsuarioController {
 			if (telefone != null && telefone.length() < 8) {
 				errors.put("telefone", "Tamanho mínimo de 8 caracteres.");
 			}
+			/*
 			String senha = hemocentro.getSenha();
 			if (senha != null && senha.length() < 6) {
 				errors.put("senha", "Tamanho minimo de 06 caracteres.");
@@ -452,7 +459,8 @@ public class UsuarioController {
 			String md5DeRamos = "uforasteiro";
 			senha += md5DeRamos;
 			hemocentro.setSenha(Criptografar.criptografar(senha));
-
+			*/
+			
 			String estado = hemocentro.getEstado();
 			if (estado != null && estado.length() < 2) {
 				errors.put("estado", "Tamanho minimo de 02 caracteres.");
@@ -486,6 +494,8 @@ public class UsuarioController {
 
 				}
 			}
+			//Seta a mesma senah do usuário
+			hemocentro.setSenha(user.get(0).getSenha());
 
 			if (errors.isEmpty()) {
 				Boolean isHemocentro = usuarioLogado instanceof UsuarioHemocentro;
@@ -533,6 +543,7 @@ public class UsuarioController {
 			String md5DeRamos = "uforasteiro";
 			senha += md5DeRamos;
 			senha = (Criptografar.criptografar(senha));
+			System.out.println(senha);
 			criteria.put(UsuarioDAO.CRITERION_EMAIL, email);
 			criteria.put(UsuarioDAO.CRITERION_SENHA, senha);
 
@@ -588,6 +599,80 @@ public class UsuarioController {
 	public Usuario usuarioRecuperaSenha(Usuario usuario) {
 		return usuario;
 	}
+	
+	@GetMapping("menu/alterarSenha")
+	public String alterarSenha() {
+		return "service/editar/alterarSenha";
+	}
+	
+	@PostMapping("menu/alterarSenha")
+	public ModelAndView alterarSenha(AlterarSenha formulario) {
+		ModelAndView mv = null;
+		UsuarioDAO dao = new UsuarioDAO();
+		Map<String, Object> criteria = new HashMap<>();
+		criteria.put(UsuarioDAO.CRITERION_EMAIL, formulario.getEmail());
+		List<Usuario> user = new ArrayList<>();
+		user = dao.readByCriteria(criteria);
+		// validação
+		Map<String, String> errors = new LinkedHashMap<>();
+		
+		String email = formulario.getEmail();
+		if (email == null || email.isEmpty()) {
+			errors.put("email", "Campo obrigatório.");
+		}
+		
+		String codigo = formulario.getCodigo();
+		if (codigo == null || codigo.isEmpty()) {
+			errors.put("codigo", "Campo obrigatório.");
+		}else if (user.get(0).getCodigo() == null || user.get(0).getCodigo().isEmpty()) {
+			errors.put("codigo", "Código inválido");
+		}else if (!user.get(0).getCodigo().equals(codigo)) {
+			errors.put("codigo", "Código inserido não é o correto");
+		}
+		
+		String password = formulario.getSenha();
+		if (password == null || password.isEmpty()) {
+			errors.put("password", "Campo obrigatório.");
+		}
+		
+		String re_password = formulario.getRe_senha();
+		if (re_password == null || re_password.isEmpty()) {
+			errors.put("password", "Campo obrigatório.");
+		}else if (!password.equals(re_password)) {
+			errors.put("password", "Senha diferente");
+		}
+		
+		//Valida se o usuário existe
+		if (user.isEmpty()) {
+
+			errors.put("email", "Email não cadastro em nosso banco de dados!");
+
+		}
+		
+		if (errors.isEmpty()) {
+
+			if (user.size() == 1) {
+				Usuario usuarioEncontrado = new Usuario();
+				
+				usuarioEncontrado = user.get(0);
+				String md5DeRamos = "uforasteiro";
+				password += md5DeRamos;
+				password = (Criptografar.criptografar(password));
+				usuarioEncontrado.setSenha(password);
+				usuarioEncontrado.setCodigo(null);
+				dao.update(usuarioEncontrado);
+				
+				return mv = new ModelAndView("redirect:/menu/recuperouSenha");
+			} else {
+				return mv = new ModelAndView("redirect:/service/editar/alterarSenha");
+			}
+		} else {
+			mv = new ModelAndView("service/editar/alterarSenha");
+			mv.addObject("erro", errors);
+			return mv;
+		}
+
+	}
 
 	@PostMapping("menu/recuperarSenha")
 	public ModelAndView recuperarSenha(Usuario usuario) {
@@ -605,7 +690,7 @@ public class UsuarioController {
 		criteria.put(UsuarioDAO.CRITERION_EMAIL, email);
 		List<Usuario> user = new ArrayList<>();
 		user = dao.readByCriteria(criteria);
-		// Parei aqui !!!!!!!!!!!!!!!!
+		
 		if (user.isEmpty()) {
 
 			errors.put("email", "Email não cadastro em nosso banco de dados!");
@@ -617,16 +702,27 @@ public class UsuarioController {
 			if (user.size() == 1) {
 				Usuario usuarioEncontrado = user.get(0);
 				usuarioRecuperaSenha = usuarioEncontrado;
+				
+				//Criar Código de recuperação senha
+				String codigo = "";
+				codigo =usuarioEncontrado.getNome().substring(2, 4) + usuarioEncontrado.getNome().substring(0, 2) + usuarioEncontrado.getTelefone().substring(0, 2) + usuarioEncontrado.getSenha().substring(2, 4);
+				codigo = codigo.toUpperCase();
+				String md5DeRamos = "uforasteiro";
+				codigo += md5DeRamos;
+				codigo = (Criptografar.criptografar(codigo));
+				usuarioEncontrado.setCodigo(codigo);
+				
+				dao.update(usuarioEncontrado);
 				String assunto = "Recuperação de Senha";
 				String mensagem = "Recuperação de senha!\n" + "\n" + "Prezado(a) " + usuarioEncontrado.getNome() + "\n"
-						+ "Informamos abaixo a sua senha de acesso em nosso sistema\n" + "\n" + "Senha: "
-						+ usuarioEncontrado.getSenha() + "\n" + "\n" + "Não é necessário responder esta mensagem.";
+						+ "Informamos abaixo o código para recuperação de acesso em nosso sistema\n" + "\n" + "Código: "
+						+ usuarioEncontrado.getCodigo() + "\n" + "\n" + "Não é necessário responder esta mensagem.";
 				try {
 					ServiceLocatorMail.getMailService().prepararEnvioMail(assunto, email, mensagem);
 				} catch (MessagingException ex) {
 					Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
 				}
-				return mv = new ModelAndView("redirect:/menu/recuperouSenha");
+				return mv = new ModelAndView("redirect:/menu/alterarSenha");
 			} else {
 				return mv = new ModelAndView("redirect:/service/cadastro/recuperarSenhaUsuario");
 			}

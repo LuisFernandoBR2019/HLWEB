@@ -12,10 +12,10 @@
 	href="./../../resources/templates/index/assets/css/main.css" />
 </head>
 
-<body class="text-center ">
+<body class="text-center " onload="selectByText('${usuarioLogado.estado}')">
 	<header id="header">
 		<a class="logo"
-			href="http://npdi.ddns.net:9005/helplife/dashboards/Hemocentro">Help
+			href="http://localhost:9005/helplife/dashboards/Hemocentro">Help
 			Life</a>
 		<nav>
 			<a href="#menu">Menu</a>
@@ -31,15 +31,15 @@
 					style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Campanha</a>
 					<ul class="dropdown-menu">
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/listar/HemocentrolistarCampanha"
+							href="http://localhost:9005/helplife/service/listar/HemocentrolistarCampanha"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Listar
 								campanhas</a></li>
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/listar/listarCampanhaHemocentro"
+							href="http://localhost:9005/helplife/service/listar/listarCampanhaHemocentro"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Minhas
 								campanhas</a></li>
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/cadastro/cadastroCampanhaHemocentro"
+							href="http://localhost:9005/helplife/service/cadastro/cadastroCampanhaHemocentro"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Criar
 								campanha</a></li>
 					</ul></li>
@@ -52,10 +52,10 @@
 				</a>
 					<ul class="dropdown-menu">
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/editar/editarHemocentro"
+							href="http://localhost:9005/helplife/service/editar/editarHemocentro"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Editar
 								usuário</a></li>
-						<li><a href="http://npdi.ddns.net:9005/helplife/menu/login"
+						<li><a href="http://localhost:9005/helplife/menu/login"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Sair</a></li>
 					</ul></li>
 			</ul>
@@ -110,6 +110,7 @@
 								${erro.email}</div>
 						</c:if>
 					</div>
+					<!-- 
 					<div class="form-group   text-danger" align="left">
 						<label for="exampleInputPassword1">Senha</label> <input
 							type="password" class="form-control" name="senha"
@@ -120,11 +121,44 @@
 								${erro.senha}</div>
 						</c:if>
 					</div>
+					 -->
 					<div class="form-group   text-danger" align="left">
-						<label for="exampleInputEstado">Estado</label> <input type="state"
+						<label for="exampleInputEstado" >Estado</label> 
+						<select name="estado" id ="estado_editar_usuario" onSubmit="selectByText(${usuarioLogado.estado})">
+								<option value="AC">Acre</option>
+								<option value="AL">Alagoas</option>
+								<option value="AP">Amapá</option>
+								<option value="AM">Amazonas</option>
+								<option value="BA">Bahia</option>
+								<option value="CE">Ceará</option>
+								<option value="DF">Distrito Federal</option>
+								<option value="ES">Espírito Santo</option>
+								<option value="GO">Goiás</option>
+								<option value="MA">Maranhão</option>
+								<option value="MT">Mato Grosso</option>
+								<option value="MS">Mato Grosso do Sul</option>
+								<option value="MG">Minas Gerais</option>
+								<option value="PA">Pará</option>
+								<option value="PB">Paraíba</option>
+								<option value="PR">Paraná</option>
+								<option value="PE">Pernambuco</option>
+								<option value="PI">Piauí</option>
+								<option value="RJ">Rio de Janeiro</option>
+								<option value="RN">Rio Grande do Norte</option>
+								<option value="RS">Rio Grande do Sul</option>
+								<option value="RO">Rondônia</option>
+								<option value="RR">Roraima</option>
+								<option value="SC">Santa Catarina</option>
+								<option value="SP">São Paulo</option>
+								<option value="SE">Sergipe</option>
+								<option value="TO">Tocantins</option>
+							</select>
+						<!-- 
+						<input type="state"
 							class="form-control" name="estado"
 							value="${usuarioLogado.estado}" id="exampleInputEstado"
-							placeholder="Minas Gerais" required="true">
+							placeholder="Minas Gerais" required="true"> -->
+							
 							<c:if test="${not empty erro.estado}">
 							<div class="alert alert-danger" role="alert">
 								${erro.estado}</div>
@@ -204,6 +238,12 @@
 </footer>
 
 <!-- Scripts -->
+<script >
+function selectByText(text) {
+	$("#estado_editar_usuario").val(text);
+	}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="./../../resources/templates/index/assets/js/jquery.min.js"></script>
 <script src="./../../resources/templates/index/assets/js/browser.min.js"></script>
 <script

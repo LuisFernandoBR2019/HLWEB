@@ -134,7 +134,7 @@ public class UsuarioDAO implements BaseImplementDAO<Usuario> {
 	public void update(Usuario usuario) {
 		try {
 			String sql = "UPDATE usuario\n"
-					+ "	SET nome=?, endereco=?, telefone=?, email=?, senha=?, estado=?, cidade=?, cep=?, tiposanguineo_id=?, tipo=?, status=?, sexo=?, datanascimento=?\n"
+					+ "	SET nome=?, endereco=?, telefone=?, email=?, senha=?, estado=?, cidade=?, cep=?, tiposanguineo_id=?, tipo=?, status=?, sexo=?, datanascimento=?, codigo_recuperar_senha = ?\n"
 					+ "	WHERE id = ?;";
 			conn = ConnectionConfig.getConnection();// abre conexão banco// abre conexão banco
 			conn.setAutoCommit(false);
@@ -209,6 +209,11 @@ public class UsuarioDAO implements BaseImplementDAO<Usuario> {
 				ps.setNull(++i, Types.VARCHAR);// sexo
 				ps.setNull(++i, Types.VARCHAR);// tipo data nascimento
 
+			}
+			if (usuario.getCodigo() == null) {
+				ps.setNull(++i, Types.VARCHAR);
+			} else {
+				ps.setString(++i, usuario.getCodigo());
 			}
 			ps.setLong(++i, usuario.getId());
 			ps.executeUpdate();
@@ -338,6 +343,7 @@ public class UsuarioDAO implements BaseImplementDAO<Usuario> {
 				usuario.setEstado(rs.getString("estado"));
 				usuario.setCidade(rs.getString("cidade"));
 				usuario.setCep(rs.getString("cep"));
+				usuario.setCodigo(rs.getString("codigo_recuperar_senha"));
 				usuario.setStatus(Usuario.StatusUsuario.values()[rs.getInt("status")]);
 				usuarioList.add(usuario);
 			}

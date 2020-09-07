@@ -4,11 +4,17 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib tagdir="/WEB-INF/tags" prefix="helplife"%>
 <link rel="stylesheet"
-	href="../../resources/templates/index/assets/css/main.css" />
+	href="../resources/templates/index/assets/css/main.css" />
 </head>
+<header id="header">
+	<a class="logo" href="http://localhost:9005/helplife/">Help Life</a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
 <body class="is-preload">
 
 	<!-- Header -->
@@ -34,17 +40,50 @@
 		<div class="row justify-content-center">
 			<div class="col-3" align="left"></div>
 			<div class="col-6" align="center">
-				<h1>Recuperar Senha</h1>
+			<br>
+				<h1>Alterar Senha</h1>
 
 				<form method="post" class="form-signin">
 					<div class="form-group   text-danger" align="left">
-						<label for="exampleInputEmail">Email</label> <input type="email"
+						<label for="exampleInputEmail">Email</label> 
+						<input type="email"
 							class="form-control" name="email" id="exampleInputEmail"
 							placeholder="Seu Email" required="true">
 						<c:if test="${not empty erro.email}">
 							<div class="alert alert-danger" role="alert">${erro.email}</div>
 						</c:if>
 					</div>
+					
+					<div class="form-group   text-danger" align="left">
+						<label for="exampleInputEmail">Nova senha</label> 
+						<input type="password"
+							class="form-control" name="senha" id="exampleInputpassword"
+							placeholder="Insira sua senha" required="true">
+						<c:if test="${not empty erro.password}">
+							<div class="alert alert-danger" role="alert">${erro.password}</div>
+						</c:if>
+					</div>
+					
+					<div class="form-group   text-danger" align="left">
+						<label for="exampleInputEmail">Repetir nova senha</label> 
+						<input type="password"
+							class="form-control" name="re_senha" id="exampleInputPassword"
+							placeholder="Repita sua senha" required="true">
+						<c:if test="${not empty erro.password}">
+							<div class="alert alert-danger" role="alert">${erro.password}</div>
+						</c:if>
+					</div>
+					
+					<div class="form-group   text-danger" align="left">
+						<label for="exampleInputEmail">Código</label> 
+						<input type="text"
+							class="form-control" name="codigo" id="exampleInputCodigo"
+							placeholder="Seu Email" required="true">
+						<c:if test="${not empty erro.codigo}">
+							<div class="alert alert-danger" role="alert">${erro.codigo}</div>
+						</c:if>
+					</div>
+					
 					<br />
 					<button type="submit" class="btn btn-primary">Enviar</button>
 				</form>
@@ -98,11 +137,13 @@
 	</div>
 </footer>
 
+
 <!-- Scripts -->
-<script src="../../resources/templates/index/assets/js/jquery.min.js"></script>
-<script src="../../resources/templates/index/assets/js/browser.min.js"></script>
+<script src="../resources/templates/index/assets/js/jquery.min.js"></script>
+<script src="../resources/templates/index/assets/js/browser.min.js"></script>
 <script
-	src="../../resources/templates/index/assets/js/breakpoints.min.js"></script>
-<script src="../../resources/templates/index/assets/js/util.js"></script>
-<script src="../../resources/templates/index/assets/js/main.js"></script>
+	src="../resources/templates/index/assets/js/breakpoints.min.js"></script>
+<script src="../resources/templates/index/assets/js/util.js"></script>
+<script src="../resources/templates/index/assets/js/main.js"></script>
+
 </html>

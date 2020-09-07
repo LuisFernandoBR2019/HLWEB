@@ -12,7 +12,7 @@
 
 <body class="text-center ">
 	<header id="header">
-		<a class="logo" href="http://npdi.ddns.net:9005/helplife/dashboards/Hemocentro">Help Life</a>
+		<a class="logo" href="http://localhost:9005/helplife/dashboards/Hemocentro">Help Life</a>
 		<nav>
 			<a href="#menu">Menu</a>
 		</nav>
@@ -27,13 +27,13 @@
 					style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Campanha</a>
 					<ul class="dropdown-menu">
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/listar/HemocentrolistarCampanha"
+							href="http://localhost:9005/helplife/service/listar/HemocentrolistarCampanha"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Listar campanhas</a></li>
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/listar/listarCampanhaHemocentro"
+							href="http://localhost:9005/helplife/service/listar/listarCampanhaHemocentro"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Minhas campanhas</a></li>
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/cadastro/cadastroCampanhaHemocentro"
+							href="http://localhost:9005/helplife/service/cadastro/cadastroCampanhaHemocentro"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Criar campanha</a></li>
 					</ul></li>
 			</ul>
@@ -45,10 +45,10 @@
 				</a>
 					<ul class="dropdown-menu">
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/editar/editarHemocentro"
+							href="http://localhost:9005/helplife/service/editar/editarHemocentro"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Editar
 								usuário</a></li>
-						<li><a href="http://npdi.ddns.net:9005/helplife/menu/login"
+						<li><a href="http://localhost:9005/helplife/menu/login"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Sair</a></li>
 					</ul></li>
 			</ul>

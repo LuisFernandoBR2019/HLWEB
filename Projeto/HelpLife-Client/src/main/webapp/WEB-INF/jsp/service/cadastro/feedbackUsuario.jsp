@@ -12,7 +12,7 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<meta http-equiv="refresh" content="5; URL='http://npdi.ddns.net:9005/helplife/menu/login'"/>
+<meta http-equiv="refresh" content="5; URL='http://localhost:9005/helplife/menu/login'"/>
 <link rel="stylesheet"
 	href="./../../resources/templates/index/assets/css/main.css" />
 </head>
@@ -20,7 +20,7 @@
 
 	<!-- Header -->
 	<header id="header">
-		<a class="logo" href="http://npdi.ddns.net:9005/helplife/">Help Life</a>
+		<a class="logo" href="http://localhost:9005/helplife/">Help Life</a>
 		<nav>
 			<a href="#menu">Menu</a>
 		</nav>
@@ -29,12 +29,12 @@
 	<!-- Nav -->
 	<nav id="menu">
 		<ul class="links">
-			<li><a href="http://npdi.ddns.net:9005/helplife/">Home</a></li>
-			<li><a href="http://npdi.ddns.net:9005/helplife/menu/apresentacao">Quem
+			<li><a href="http://localhost:9005/helplife/">Home</a></li>
+			<li><a href="http://localhost:9005/helplife/menu/apresentacao">Quem
 					Somos</a></li>
-			<li><a href="http://npdi.ddns.net:9005/helplife/menu/campanhas">Campanhas</a></li>
-			<li><a href="http://npdi.ddns.net:9005/helplife/menu/orientacoes">Orientações</a></li>
-			<li><a href="http://npdi.ddns.net:9005/helplife/menu/login">Entrar</a></li>
+			<li><a href="http://localhost:9005/helplife/menu/campanhas">Campanhas</a></li>
+			<li><a href="http://localhost:9005/helplife/menu/orientacoes">Orientações</a></li>
+			<li><a href="http://localhost:9005/helplife/menu/login">Entrar</a></li>
 		</ul>
 	</nav>
 	<br />
@@ -49,7 +49,7 @@
 						<strong>Cadastro realizado com sucesso!</strong>
 					</h1>
 					<h2>Aguardem 5 segundos para ser redirecionado a tela de entrada, ou clique</h2>
-					<h2><a href="http://npdi.ddns.net:9005/helplife/menu/login"><strong>aqui!</strong></a></h2>
+					<h2><a href="http://localhost:9005/helplife/menu/login"><strong>aqui!</strong></a></h2>
 					
 				</div>
 				<div class="col-3" align="right"></div>

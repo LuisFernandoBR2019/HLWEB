@@ -17,10 +17,10 @@
             <div class="container-fluid ">
 
                 <div class="navbar-header ">
-                    <a class="navbar-brand" href="http://npdi.ddns.net:9005/helplife/">HELP LIFE</a>
+                    <a class="navbar-brand" href="http://localhost:9005/helplife/">HELP LIFE</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right ">
-                    <li class="active"><a href="http://npdi.ddns.net:9005/helplife//menu/login">Login</a></li>
+                    <li class="active"><a href="http://localhost:9005/helplife//menu/login">Login</a></li>
                 </ul>
 
             </div>

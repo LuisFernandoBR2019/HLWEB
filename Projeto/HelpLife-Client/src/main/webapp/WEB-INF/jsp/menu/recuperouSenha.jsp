@@ -13,7 +13,7 @@
 
 	<!-- Header -->
 	<header id="header">
-		<a class="logo" href="http://npdi.ddns.net:9005/helplife/">Help Life</a>
+		<a class="logo" href="http://localhost:9005/helplife/">Help Life</a>
 		<nav>
 			<a href="#menu">Menu</a>
 		</nav>
@@ -22,12 +22,12 @@
 	<!-- Nav -->
 	<nav id="menu">
 		<ul class="links">
-			<li><a href="http://npdi.ddns.net:9005/helplife/">Home</a></li>
-			<li><a href="http://npdi.ddns.net:9005/helplife/menu/apresentacao">Quem
+			<li><a href="http://localhost:9005/helplife/">Home</a></li>
+			<li><a href="http://localhost:9005/helplife/menu/apresentacao">Quem
 					Somos</a></li>
-			<li><a href="http://npdi.ddns.net:9005/helplife/menu/campanhas">Campanhas</a></li>
-			<li><a href="http://npdi.ddns.net:9005/helplife/menu/orientacoes">Orientações</a></li>
-			<li><a href="http://npdi.ddns.net:9005/helplife/menu/login">Entrar</a></li>
+			<li><a href="http://localhost:9005/helplife/menu/campanhas">Campanhas</a></li>
+			<li><a href="http://localhost:9005/helplife/menu/orientacoes">Orientações</a></li>
+			<li><a href="http://localhost:9005/helplife/menu/login">Entrar</a></li>
 		</ul>
 	</nav>
 	<div class="container">
@@ -42,7 +42,7 @@
 				<p>Foi enviado um email com a sua senha para o email informado!
 				Não é necessário responder este e-mail, trata-se de um email automático.
 				Muito obrigado.</p>
-				<a href="http://npdi.ddns.net:9005/helplife/menu/login">Clique aqui!</a><p>para retornar a tela de acesso.</p>
+				<a href="http://localhost:9005/helplife/menu/login">Clique aqui!</a><p>para retornar a tela de acesso.</p>
 				<br/>
 				<br/>
 			</div>

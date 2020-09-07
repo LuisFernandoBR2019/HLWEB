@@ -177,14 +177,13 @@ public class SolicitacaoDAO implements BaseImplementDAO<Solicitacao> {
 					+ "H.telefone as hemocentro_telefone,\n" + "H.email as hemocentro_email,\n"
 					+ "H.senha as hemocentro_senha,\n" + "H.estado as hemocentro_estado,\n"
 					+ "H.cidade as hemocentro_cidade,\n" + "H.cep as hemocentro_cep,\n"
-					+ "T.id as tiposanguineo_solicitacao_id, T.tiposangue as tiposanguineo_solicitacao_tiposangue,\n"
-					+ "D.id as doacao_solicitacao_id, D.datahora as doacao_solicitacao_datahora, D.status as doacao_solicitacao_status\n"
+					+ "T.id as tiposanguineo_solicitacao_id, T.tiposangue as tiposanguineo_solicitacao_tiposangue\n"
 					+ "from solicitacao S\n" + "join usuario U on U.id = S.usuario_id \n"
 					+ "left join tiposanguineo TP on TP.id = U.tiposanguineo_id\n"
 					+ "join usuario H on H.id = S.hemocentro_id \n"
 					+ "left join tiposanguineo_solicitacao TL on TL.solicitacao_id = S.id\n"
 					+ "left join tiposanguineo T on T.id = TL.tiposanguineo_id\n"
-					+ "left join doacao D ON D.solicitacao_id = S.id\n" + "where S.id = ?";
+					+ "where S.id = ?";
 
 			ps = conn.prepareStatement(sql);
 			ps.setLong(1, id);
@@ -275,14 +274,13 @@ public class SolicitacaoDAO implements BaseImplementDAO<Solicitacao> {
 				+ "H.telefone as hemocentro_telefone,\n" + "H.email as hemocentro_email,\n"
 				+ "H.senha as hemocentro_senha,\n" + "H.estado as hemocentro_estado,\n"
 				+ "H.cidade as hemocentro_cidade,\n" + "H.cep as hemocentro_cep,\n"
-				+ "TS.id as tiposanguineo_solicitacao_id, TS.tiposangue as tiposanguineo_solicitacao_tiposangue,\n"
-				+ "D.id as doacao_solicitacao_id, D.datahora as doacao_solicitacao_datahora, D.status as doacao_solicitacao_status\n"
+				+ "TS.id as tiposanguineo_solicitacao_id, TS.tiposangue as tiposanguineo_solicitacao_tiposangue\n"
 				+ "from solicitacao S\n" + "join usuario U on U.id = S.usuario_id \n"
 				+ "left join tiposanguineo TP on TP.id = U.tiposanguineo_id\n"
 				+ "join usuario H on H.id = S.hemocentro_id \n"
 				+ "left join tiposanguineo_solicitacao TL on TL.solicitacao_id = S.id\n"
 				+ "left join tiposanguineo TS on TS.id = TL.tiposanguineo_id\n"
-				+ "left join doacao D ON D.solicitacao_id = S.id\n" + "where 1 = 1";
+				+ "where 1 = 1";
 		Statement s;
 		Long criterionUsuario_id = (Long) criteria.get(CRITERION_USUARIO_ID_EQ);
 		if (criterionUsuario_id != null && criterionUsuario_id > 0) {

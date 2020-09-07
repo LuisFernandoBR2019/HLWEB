@@ -14,11 +14,11 @@
 <meta name="keywords" content="" />
 <c:if test="${isHemocentro eq true}">
 	<meta http-equiv="refresh"
-		content="5; URL='http://npdi.ddns.net:9005/helplife/service/listar/listarCampanhaHemocentro'" />
+		content="5; URL='http://localhost:9005/helplife/service/listar/listarCampanhaHemocentro'" />
 </c:if>
 <c:if test="${isHemocentro eq false}">
 	<meta http-equiv="refresh"
-		content="5; URL='http://npdi.ddns.net:9005/helplife/service/listar/usuario/listarCampanhaUsuario'" />
+		content="5; URL='http://localhost:9005/helplife/service/listar/usuario/listarCampanhaUsuario'" />
 </c:if>
 
 <link rel="stylesheet"
@@ -31,7 +31,7 @@
 
 				<div class="navbar-header ">
 					<a class="navbar-brand"
-						href="http://npdi.ddns.net:9005/helplife/dashboards/Usuario">Help
+						href="http://localhost:9005/helplife/dashboards/Usuario">Help
 						Life</a>
 				</div>
 				<ul class="nav navbar-nav ">
@@ -45,13 +45,13 @@
 						data-toggle="dropdown" href="#">Campanha<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a
-								href="http://npdi.ddns.net:9005/helplife/service/listar/listarCampanha">Listar
+								href="http://localhost:9005/helplife/service/listar/listarCampanha">Listar
 									campanhas</a></li>
 							<li><a
-								href="http://npdi.ddns.net:9005/helplife/service/listar/listarCampanhaHemocentro">Minhas
+								href="http://localhost:9005/helplife/service/listar/listarCampanhaHemocentro">Minhas
 									campanhas</a></li>
 							<li><a
-								href="http://npdi.ddns.net:9005/helplife/service/cadastro/cadastroCampanhaHemocentro">Criar
+								href="http://localhost:9005/helplife/service/cadastro/cadastroCampanhaHemocentro">Criar
 									campanha</a></li>
 						</ul></li>
 				</ul>
@@ -64,10 +64,10 @@
 					</a>
 						<ul class="dropdown-menu">
 							<li><a
-								href="http://npdi.ddns.net:9005/helplife/service/editar/editarHemocentro"
+								href="http://localhost:9005/helplife/service/editar/editarHemocentro"
 								style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Editar
 									usuário</a></li>
-							<li><a href="http://npdi.ddns.net:9005/helplife/menu/login"
+							<li><a href="http://localhost:9005/helplife/menu/login"
 								style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Sair</a></li>
 						</ul></li>
 				</ul>
@@ -88,7 +88,7 @@
 							entrada, ou clique</h2>
 						<h2>
 							<a
-								href="http://npdi.ddns.net:9005/helplife/service/listar/listarCampanhaHemocentro"><strong>aqui!</strong></a>
+								href="http://localhost:9005/helplife/service/listar/listarCampanhaHemocentro"><strong>aqui!</strong></a>
 						</h2>
 
 					</div>
@@ -120,15 +120,15 @@
 						style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">CAMPANHA</a>
 						<ul class="dropdown-menu">
 							<li><a
-								href="http://npdi.ddns.net:9005/helplife/service/listar/listarCampanha"
+								href="http://localhost:9005/helplife/service/listar/listarCampanha"
 								style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">LISTAR
 									TODAS</a></li>
 							<li><a
-								href="http://npdi.ddns.net:9005/helplife/service/listar/usuario/listarCampanhaUsuario"
+								href="http://localhost:9005/helplife/service/listar/usuario/listarCampanhaUsuario"
 								style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">MINHAS
 									CAMPANHAS</a></li>
 							<li><a
-								href="http://npdi.ddns.net:9005/helplife/service/cadastro/cadastroCampanha"
+								href="http://localhost:9005/helplife/service/cadastro/cadastroCampanha"
 								style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">ADICIONAR
 									CAMPANHAS</a></li>
 						</ul></li>
@@ -140,15 +140,15 @@
 							class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a
-								href="http://npdi.ddns.net:9005/helplife/service/listar/listarSolicitacao"
+								href="http://localhost:9005/helplife/service/listar/listarSolicitacao"
 								style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">LISTAR
 									TODAS</a></li>
 							<li><a
-								href="http://npdi.ddns.net:9005/helplife/service/listar/usuario/listarSolicitacaoUsuario"
+								href="http://localhost:9005/helplife/service/listar/usuario/listarSolicitacaoUsuario"
 								style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">MINHAS
 									SOLICITAÇÕES</a></li>
 							<li><a
-								href="http://npdi.ddns.net:9005/helplife/service/cadastro/cadastroSolicitacao"
+								href="http://localhost:9005/helplife/service/cadastro/cadastroSolicitacao"
 								style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">ADICIONAR
 									SOLICITAÇÃO</a></li>
 						</ul></li>
@@ -161,10 +161,10 @@
 					</a>
 						<ul class="dropdown-menu">
 							<li><a
-								href="http://npdi.ddns.net:9005/helplife/service/editar/editarUsuario"
+								href="http://localhost:9005/helplife/service/editar/editarUsuario"
 								style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Editar
 									usuário</a></li>
-							<li><a href="http://npdi.ddns.net:9005/helplife/menu/login"
+							<li><a href="http://localhost:9005/helplife/menu/login"
 								style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Sair</a></li>
 						</ul></li>
 				</ul>
@@ -186,7 +186,7 @@
 						entrada, ou clique</h2>
 					<h2>
 						<a
-							href="http://npdi.ddns.net:9005/helplife/service/listar/usuario/listarCampanhaUsuario"><strong>aqui!</strong></a>
+							href="http://localhost:9005/helplife/service/listar/usuario/listarCampanhaUsuario"><strong>aqui!</strong></a>
 					</h2>
 
 				</div>

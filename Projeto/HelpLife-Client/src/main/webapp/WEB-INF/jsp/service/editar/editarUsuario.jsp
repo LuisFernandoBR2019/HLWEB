@@ -10,13 +10,14 @@
 <link rel="stylesheet" href="./../../resources/css/Dashboard.css">
 <link rel="stylesheet"
 	href="./../../resources/templates/index/assets/css/main.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
-<body class="text-center ">
 
+<body class="text-center" onload="loaded('${usuarioLogado.estado}','${usuarioLogado.sexo }')">
 	<!-- Header -->
 	<header id="header">
 		<a class="logo"
-			href="http://npdi.ddns.net:9005/helplife/dashboards/Usuario">Help
+			href="http://localhost:9005/helplife/dashboards/Usuario">Help
 			Life</a>
 		<nav>
 			<a href="#menu">Menu</a>
@@ -32,15 +33,15 @@
 					style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Campanha</a>
 					<ul class="dropdown-menu">
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/listar/listarCampanha"
+							href="http://localhost:9005/helplife/service/listar/listarCampanha"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Listar
 								campanhas</a></li>
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/listar/usuario/listarCampanhaUsuario"
+							href="http://localhost:9005/helplife/service/listar/usuario/listarCampanhaUsuario"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Minhas
 								campanhas</a></li>
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/cadastro/cadastroCampanha"
+							href="http://localhost:9005/helplife/service/cadastro/cadastroCampanha"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Criar
 								campanha</a></li>
 					</ul></li>
@@ -53,15 +54,15 @@
 						class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/listar/listarSolicitacao"
+							href="http://localhost:9005/helplife/service/listar/listarSolicitacao"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Listar
 								solicitações</a></li>
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/listar/usuario/listarSolicitacaoUsuario"
+							href="http://localhost:9005/helplife/service/listar/usuario/listarSolicitacaoUsuario"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Minhas
 								solicitações</a></li>
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/cadastro/cadastroSolicitacao"
+							href="http://localhost:9005/helplife/service/cadastro/cadastroSolicitacao"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Criar
 								solicitação</a></li>
 					</ul></li>
@@ -74,10 +75,10 @@
 				</a>
 					<ul class="dropdown-menu">
 						<li><a
-							href="http://npdi.ddns.net:9005/helplife/service/editar/editarUsuario"
+							href="http://localhost:9005/helplife/service/editar/editarUsuario"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Editar
 								usuário</a></li>
-						<li><a href="http://npdi.ddns.net:9005/helplife/menu/login"
+						<li><a href="http://localhost:9005/helplife/menu/login"
 							style="text-decoration: none; color: rgba(255, 255, 255, 0.5);">Sair</a></li>
 					</ul></li>
 			</ul>
@@ -85,7 +86,7 @@
 	</nav>
 
 	<br />
-	<div class="container">
+	<div class="container" >
 		<div class="row justify-content-center">
 			<div class="col-4" align="left"></div>
 			<div class="col-4" align="center">
@@ -137,6 +138,7 @@
 							</c:if>
 						</div>
 						<br />
+						<!--
 						<div class="form-group   text-danger" align="left"
 							style="width: 100%;">
 							<label for="exampleInputPassword1">Senha</label> <input
@@ -148,12 +150,43 @@
 									${erro.senha}</div>
 							</c:if>
 						</div>
+						  -->
 						<br />
-						<div class="form-group   text-danger" align="left">
-							<label for="exampleInputEstado">Estado</label> <input
+						<div class="form-group   text-danger" align="left" >
+							<label for="exampleInputEstado">Estado</label> 
+							 <select id ="estado_editar_usuario"  name="estado">
+								<option value="AC">Acre</option>
+								<option value="AL">Alagoas</option>
+								<option value="AP">Amapá</option>
+								<option value="AM">Amazonas</option>
+								<option value="BA">Bahia</option>
+								<option value="CE">Ceará</option>
+								<option value="DF">Distrito Federal</option>
+								<option value="ES">Espírito Santo</option>
+								<option value="GO">Goiás</option>
+								<option value="MA">Maranhão</option>
+								<option value="MT">Mato Grosso</option>
+								<option value="MS">Mato Grosso do Sul</option>
+								<option value="MG">Minas Gerais</option>
+								<option value="PA">Pará</option>
+								<option value="PB">Paraíba</option>
+								<option value="PR">Paraná</option>
+								<option value="PE">Pernambuco</option>
+								<option value="PI">Piauí</option>
+								<option value="RJ">Rio de Janeiro</option>
+								<option value="RN">Rio Grande do Norte</option>
+								<option value="RS">Rio Grande do Sul</option>
+								<option value="RO">Rondônia</option>
+								<option value="RR">Roraima</option>
+								<option value="SC">Santa Catarina</option>
+								<option value="SP">São Paulo</option>
+								<option value="SE">Sergipe</option>
+								<option value="TO">Tocantins</option>
+							</select>
+							<!-- <input
 								type="state" class="form-control" name="estado"
 								value="${usuarioLogado.estado}" id="exampleInputEstado"
-								placeholder="Minas Gerais" required="true">
+								placeholder="Minas Gerais" required="true"> -->
 							<c:if test="${not empty erro.estado}">
 								<div class="alert alert-danger" role="alert">
 									${erro.estado}</div>
@@ -193,9 +226,16 @@
 						<br />
 
 						<div class="form-group   text-danger" align="left">
-							<label for="exampleInputSexo">Sexo</label> <input type="sexo"
+							<label for="exampleInputSexo">Sexo</label> 
+							 <select id ="sexo"  name="sexo">
+								<option value="M">Masculino</option>
+								<option value="F">Feminino</option>
+							</select>
+							<!-- 
+							 <input type="sexo"
 								class="form-control" name="sexo" value="${usuarioLogado.sexo}"
 								id="exampleInputSexo" placeholder="Seu Sexo">
+							-->
 						</div>
 						<br />
 						<div class="form-group   text-danger" align="left">
@@ -260,8 +300,23 @@
 
 		</div>
 	</footer>
-
 	<!-- Scripts -->
+
+<script >
+function loaded(estado,sexo){
+	selectByTextSexo(sexo);
+	selectByText(estado);
+}
+function selectByTextSexo(text) {
+	$("#sexo").val(text);
+	console.log(text);
+	}
+
+function selectByText(text) {
+	$("#estado_editar_usuario").val(text);
+	console.log(text);
+	}
+</script>
 	<script src="./../../resources/templates/index/assets/js/jquery.min.js"></script>
 	<script
 		src="./../../resources/templates/index/assets/js/browser.min.js"></script>

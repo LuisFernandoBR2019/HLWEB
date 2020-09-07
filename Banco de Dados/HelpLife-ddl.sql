@@ -10,19 +10,20 @@ tiposangue varchar(3) unique not null check (tiposangue in ('O+','O-','A-','A+',
 
 create table usuario(
 id bigserial primary key,
-nome varchar (100) not null,
+nome varchar (100),
 datanascimento varchar(15),
-endereco varchar(100) not null,
-telefone varchar(100) not null,
-email varchar(100) unique not null,
-senha varchar(50) not null,
-estado varchar(50) not null,
-cidade varchar(50) not null,
-cep varchar(20)not null,
-tiposanguineo_id bigint references tiposanguineo (id) on update cascade not null,
+endereco varchar(100),
+telefone varchar(100),
+email varchar(100) unique ,
+senha varchar(50),
+estado varchar(50) ,
+cidade varchar(50) ,
+cep varchar(20),
+tiposanguineo_id bigint references tiposanguineo (id) on update cascade,
 sexo varchar(1) check (sexo in('F', 'M')),
 tipo integer not null check (tipo in( 0 , 1)),
-status integer default 0
+status integer default 0,
+codigo_recuperar_senha varchar(50)
 );
 
 create table campanha (

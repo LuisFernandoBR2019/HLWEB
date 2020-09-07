@@ -12,9 +12,9 @@ insert into tiposanguineo (tiposangue) values ('AB-');
 
 --Usuario
 insert into usuario (nome, endereco, telefone, email, senha,  estado, cidade, cep, status, tiposanguineo_id, sexo, tipo, datanascimento) 
-	values ('Luis Fernando', 'Rua das Pedras', '99887766', 'nando_srs@hotmail.com', '123456', 'MG', 'Santa Rita do Sapucai', '37540000', 0,1,'M', 0, '10/10/1995');
+	values ('Luis Fernando', 'Rua das Pedras', '99887766', 'nando_srs@hotmail.com', '400086719104BDD0DF7DE2FED14D6FCC', 'MG', 'Santa Rita do Sapucai', '37540000', 0,1,'M', 0, '10/10/1995');
 insert into usuario (nome, endereco, telefone, email, senha,  estado, cidade, cep, status, tiposanguineo_id, sexo, tipo, datanascimento) 
-	values ('Hemocentro Santa Rita','Rua das flores','99557766','hemocentro.santarita@hotmail.com','123456684','MG','Santa Rita do Sapucai','37540000', 1, 1, NULL, 1,  NULL);
+	values ('Hemocentro Santa Rita','Rua das flores','99557766','hemocentro.santarita@hotmail.com','400086719104BDD0DF7DE2FED14D6FCC','MG','Santa Rita do Sapucai','37540000', 1, 1, NULL, 1,  NULL);
 
 --Solicitacao
 insert into solicitacao (datahora,descricao,usuario_id,hemocentro_id,status) 
