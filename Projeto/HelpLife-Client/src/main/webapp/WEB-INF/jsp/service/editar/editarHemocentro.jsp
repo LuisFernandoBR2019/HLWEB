@@ -242,6 +242,13 @@
 function selectByText(text) {
 	$("#estado_editar_usuario").val(text);
 	}
+
+</script>
+<script>
+	jQuery(function($) {
+		$("#exampleInputPhone").mask("(999) 9999-9999");
+		$("#exampleInputCEP").mask("99999-999");
+	});
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="./../../resources/templates/index/assets/js/jquery.min.js"></script>

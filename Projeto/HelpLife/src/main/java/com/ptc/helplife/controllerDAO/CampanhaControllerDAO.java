@@ -77,4 +77,29 @@ public class CampanhaControllerDAO {
         service.delete(id);
     }
 
+	@GetMapping("/campanha/ativa/{id}")
+	public ResponseEntity ativaCampanha(@PathVariable("id") Long id) {
+		Campanha campanha = service.readById(id);
+		HttpHeaders httpHeaders = new HttpHeaders();
+		if (campanha != null) {
+			campanha.setStatus(Campanha.StatusCampanha.STATUS_ATIVA);
+			service.update(campanha);
+			return new ResponseEntity<>(null, httpHeaders, HttpStatus.ACCEPTED);
+		} else {
+			return new ResponseEntity<>(null, httpHeaders, HttpStatus.NOT_ACCEPTABLE);
+		}
+	}
+
+	@GetMapping("/campanha/inativa/{id}")
+	public ResponseEntity desativaCampanha(@PathVariable("id") Long id) {
+		Campanha campanha = service.readById(id);
+		HttpHeaders httpHeaders = new HttpHeaders();
+		if (campanha != null) {
+			campanha.setStatus(Campanha.StatusCampanha.STATUS_INATIVA);
+			service.update(campanha);
+			return new ResponseEntity<>(null, httpHeaders, HttpStatus.ACCEPTED);
+		} else {
+			return new ResponseEntity<>(null, httpHeaders, HttpStatus.NOT_ACCEPTABLE);
+		}
+	}
 }

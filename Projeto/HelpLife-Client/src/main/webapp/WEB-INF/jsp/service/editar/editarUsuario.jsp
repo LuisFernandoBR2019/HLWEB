@@ -118,7 +118,7 @@
 						</div>
 						<br />
 						<div class="form-group   text-danger" align="left">
-							<label for="exampleInputPhone">Telefone</label> <input
+							<label for="exampleInputPhone">Celular</label> <input
 								type="phone" class="form-control" name="telefone"
 								value="${usuarioLogado.telefone}" id="exampleInputPhone"
 								placeholder="35 99700 8080" required="true">
@@ -316,6 +316,13 @@ function selectByText(text) {
 	$("#estado_editar_usuario").val(text);
 	console.log(text);
 	}
+</script>
+
+<script>
+	jQuery(function($) {
+		$("#exampleInputPhone").mask("(999) 9-9999-9999");
+		$("#exampleInputCEP").mask("99999-999");
+	});
 </script>
 	<script src="./../../resources/templates/index/assets/js/jquery.min.js"></script>
 	<script

@@ -29,9 +29,18 @@ public class Usuario {
     private String cidade;
     private String cep;
     private StatusUsuario status;
+    private int tipo;
 
     
-    public String getCodigo() {
+    public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getCodigo() {
 		return codigo;
 	}
 
@@ -123,7 +132,7 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [codigo=" + codigo + ", id=" + id + ", nome=" + nome + ", endereco=" + endereco + ", telefone="
 				+ telefone + ", email=" + email + ", senha=" + senha + ", estado=" + estado + ", cidade=" + cidade
-				+ ", cep=" + cep + ", status=" + status + "]";
+				+ ", cep=" + cep + ", status=" + status + ", tipo=" + tipo + "]";
 	}
 
    

@@ -223,7 +223,7 @@
 <!-- Scripts -->
 <script>
 	jQuery(function($) {
-		$("#exampleInputPhone").mask("(999) 9-9999-9999");
+		$("#exampleInputPhone").mask("(999) 9999-9999");
 		$("#exampleInputCEP").mask("99999-999");
 	});
 </script>

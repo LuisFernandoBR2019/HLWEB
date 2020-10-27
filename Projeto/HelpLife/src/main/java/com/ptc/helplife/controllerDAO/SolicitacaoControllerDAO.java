@@ -72,6 +72,31 @@ public class SolicitacaoControllerDAO {
         service.delete(id);
     }
 
+  	@GetMapping("/solicitacao/ativa/{id}")
+  	public ResponseEntity ativaSolicitacao(@PathVariable("id") Long id) {
+  		Solicitacao solicitacao = service.readById(id);
+  		HttpHeaders httpHeaders = new HttpHeaders();
+  		if (solicitacao != null) {
+  			solicitacao.setStatus(Solicitacao.StatusSolicitacao.STATUS_ATIVA);
+  			service.update(solicitacao);
+  			return new ResponseEntity<>(null, httpHeaders, HttpStatus.ACCEPTED);
+  		} else {
+  			return new ResponseEntity<>(null, httpHeaders, HttpStatus.NOT_ACCEPTABLE);
+  		}
+  	}
+
+  	@GetMapping("/solicitacao/inativa/{id}")
+  	public ResponseEntity desativaSolicitacao(@PathVariable("id") Long id) {
+  		Solicitacao solicitacao = service.readById(id);
+  		HttpHeaders httpHeaders = new HttpHeaders();
+  		if (solicitacao != null) {
+  			solicitacao.setStatus(Solicitacao.StatusSolicitacao.STATUS_INATIVA);
+  			service.update(solicitacao);
+  			return new ResponseEntity<>(null, httpHeaders, HttpStatus.ACCEPTED);
+  		} else {
+  			return new ResponseEntity<>(null, httpHeaders, HttpStatus.NOT_ACCEPTABLE);
+  		}
+  	}
 
 }
 

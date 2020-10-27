@@ -48,6 +48,11 @@
 					<br />
 					<button type="submit" class="btn btn-primary">Enviar</button>
 				</form>
+				<br />
+				<li><a href="http://localhost:9005/helplife/menu/alterarSenha">Já tenho um código.</a></li>
+				
+				<br />
+				<br />
 			</div>
 			<div class="col-3" align="right"></div>
 		</div>

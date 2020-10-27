@@ -267,6 +267,7 @@ public class UsuarioDAO implements BaseImplementDAO<Usuario> {
 				usuario.setCidade(rs.getString("cidade"));
 				usuario.setCep(rs.getString("cep"));
 				usuario.setStatus(Usuario.StatusUsuario.values()[rs.getInt("status")]);
+				usuario.setTipo(rs.getInt("tipo"));
 			}
 			rs.close();
 			ps.close();
@@ -345,6 +346,7 @@ public class UsuarioDAO implements BaseImplementDAO<Usuario> {
 				usuario.setCep(rs.getString("cep"));
 				usuario.setCodigo(rs.getString("codigo_recuperar_senha"));
 				usuario.setStatus(Usuario.StatusUsuario.values()[rs.getInt("status")]);
+				usuario.setTipo(rs.getInt("tipo"));
 				usuarioList.add(usuario);
 			}
 

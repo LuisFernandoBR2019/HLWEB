@@ -76,7 +76,7 @@
 						</div>
 
 						<div class="form-group   text-danger" align="left">
-							<br /> <label for="exampleInputPhone">Telefone</label> <input
+							<br /> <label for="exampleInputPhone">Celular</label> <input
 								type="string" class="form-control" name="telefone"
 								required="true" value="${usuario.telefone}"
 								id="exampleInputPhone" placeholder="035 9 9700 8080">

@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ptc.helplife.DAO.UsuarioDAO;
+import com.ptc.helplife.Entity.AlterarSenha;
 import com.ptc.helplife.Entity.Usuario;
 import com.ptc.helplife.Entity.UsuarioComum;
 import com.ptc.helplife.Entity.UsuarioHemocentro;
@@ -190,13 +191,8 @@ public class UsuarioControllerDAO {
 	}
 
 	@PostMapping("/recuperarSenha")
-	public String recuperarSenha(Usuario usuario) {
+	public String recuperarSenha(@RequestBody Usuario usuario) {
 		UsuarioDAO dao = new UsuarioDAO();
-		for (int i = 0; i < 4; i++) {
-
-			usuario = (UsuarioHemocentro) service.validaDadosAndroid(usuario);
-
-		}
 		Map<String, Object> criteria = new HashMap<>();
 		criteria.put(UsuarioDAO.CRITERION_EMAIL, usuario.getEmail());
 		// validação
@@ -238,6 +234,75 @@ public class UsuarioControllerDAO {
 
 		}
 	
+	}
+	
+	@PostMapping("/alterarSenha")
+	public String alterarSenha(@RequestBody AlterarSenha formulario) {
+	
+		UsuarioDAO dao = new UsuarioDAO();
+		Map<String, Object> criteria = new HashMap<>();
+		criteria.put(UsuarioDAO.CRITERION_EMAIL, formulario.getEmail());
+		List<Usuario> user = new ArrayList<>();
+		user = dao.readByCriteria(criteria);
+		// validação
+		Map<String, String> errors = new LinkedHashMap<>();
+		
+		String email = formulario.getEmail();
+		if (email == null || email.isEmpty()) {
+			errors.put("email", "Campo obrigatório.");
+		}
+		
+
+		//Valida se o usuário existe
+		if (user.isEmpty()) {
+
+			errors.put("email", "Email não cadastro em nosso banco de dados!");
+
+		}
+		
+		String codigo = formulario.getCodigo();
+		if (codigo == null || codigo.isEmpty() && errors.isEmpty()) {
+			errors.put("codigo", "Campo obrigatório.");
+		}else if (user.get(0).getCodigo() == null || user.get(0).getCodigo().isEmpty()) {
+			errors.put("codigo", "Código inválido");
+		}else if (!user.get(0).getCodigo().equals(codigo)) {
+			errors.put("codigo", "Código inserido não é o correto");
+		}
+		
+		String password = formulario.getSenha();
+		if (password == null || password.isEmpty()) {
+			errors.put("password", "Campo obrigatório.");
+		}
+		
+		String re_password = formulario.getRe_senha();
+		if (re_password == null || re_password.isEmpty()) {
+			errors.put("password", "Campo obrigatório.");
+		}else if (!password.equals(re_password)) {
+			errors.put("password", "Senha diferente");
+		}
+		
+		
+		if (errors.isEmpty()) {
+
+			if (user.size() == 1) {
+				Usuario usuarioEncontrado = new Usuario();
+				
+				usuarioEncontrado = user.get(0);
+				String md5DeRamos = "uforasteiro";
+				password += md5DeRamos;
+				password = (Criptografar.criptografar(password));
+				usuarioEncontrado.setSenha(password);
+				usuarioEncontrado.setCodigo(null);
+				dao.update(usuarioEncontrado);
+				
+				return "Ok";
+			} else {
+				return "Ok";
+			}
+		} else {
+			return "Falhou";
+		}
+
 	}
 
 }
