@@ -176,7 +176,7 @@ public class UsuarioControllerDAO {
 		String senha = usuario.getSenha();
 		usuario.setSenha(senha+md5DeRamos);
 		usuario.setSenha(Criptografar.criptografar(usuario.getSenha()));
-		criteria.put(UsuarioDAO.CRITERION_EMAIL, emailMobile);
+		criteria.put(UsuarioDAO.CRITERION_EMAIL, usuario.getEmail());
 		criteria.put(UsuarioDAO.CRITERION_SENHA, usuario.getSenha());
 
 		UsuarioDAO dao = new UsuarioDAO();
