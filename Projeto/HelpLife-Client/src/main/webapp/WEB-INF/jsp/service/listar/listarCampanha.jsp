@@ -90,7 +90,7 @@
 						<tr>
 							<th>Nome</th>
 							<th>Data Final</th>
-							<th>Tipos Sanguineos</th>
+							<th>Tipos sanguíneo</th>
 							<th></th>
 						</tr>
 					</thead>

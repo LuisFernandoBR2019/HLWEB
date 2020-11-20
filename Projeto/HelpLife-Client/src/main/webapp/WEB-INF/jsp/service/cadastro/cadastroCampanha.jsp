@@ -194,7 +194,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="exampleInputTipoSanguineo">Tipo Sanguineo</label>
+					<label for="exampleInputTipoSanguineo">Tipo sanguíneo</label>
 					<div class="form-check">
 						<c:forEach items="${tipoSanguineoList}" var="tipoSanguineo">
 							<input type="checkbox" class="form-check-input"

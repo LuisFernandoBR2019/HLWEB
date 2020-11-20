@@ -93,7 +93,7 @@
 							${erro.descricao}</div>
 					</c:if>
 					<div class="form-group   text-danger" align="left">
-						<label for="exampleInputNome">DataHora</label> <input type="text"
+						<label for="exampleInputNome">Data</label> <input type="text"
 							class="form-control" name="dataHora"
 							value="${solicitacao.dataHora}" id="exampleInputNome"
 							placeholder="DataHora" required="true">
@@ -103,7 +103,7 @@
 						</div>
 					</c:if>
 					<div class="form-group">
-						<label for="exampleInputTipoSanguineo">Tipo Sanguineo</label>
+						<label for="exampleInputTipoSanguineo">Tipo sanguíneo</label>
 						<div class="form-check">
 							<c:forEach items="${tipoSanguineoList}" var="tipoSanguineo">
 								<c:set var="selecionado" value="false" scope="request" />

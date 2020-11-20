@@ -68,7 +68,7 @@
 						<tr>
 							<th>Nome</th>
 							<th>Data Final</th>
-							<th>Tipo Sanguineos</th>
+							<th>Tipo sanguíneo</th>
 							<th></th>
 						</tr>
 					</thead>

@@ -81,7 +81,7 @@
 
 			<form method="post" class="form-signin">
 				<div class="form-group text-danger" align="left">
-					<label for="exampleInputDH">Data Hora</label> <input type="Date"
+					<label for="exampleInputDH">Data</label> <input type="Date"
 						class="form-control" name="dataHora" required="true"
 						value="${solicitacao.dataHora}" id="exampleInputDH"
 						placeholder="Data Hora">
@@ -118,7 +118,7 @@
 						</c:if>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputTipoSanguineo">Tipo Sanguineo</label>
+						<label for="exampleInputTipoSanguineo">Tipo sanguíneo</label>
 						<div class="form-check">
 							<c:forEach items="${tipoSanguineoList}" var="tipoSanguineo">
 								<input type="checkbox" class="form-check-input"

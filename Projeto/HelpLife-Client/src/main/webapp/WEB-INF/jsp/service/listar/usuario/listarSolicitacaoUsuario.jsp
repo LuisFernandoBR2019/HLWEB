@@ -89,9 +89,9 @@
 					<!-- tabela com cabeçalhos -->
 					<thead>
 						<tr>
-							<th>Data Hora</th>
+							<th>Data</th>
 							<th>Descrição</th>
-							<th>Tipo Sanguineo</th>
+							<th>Tipo sanguíneo</th>
 							<th></th>
 						</tr>
 					</thead>

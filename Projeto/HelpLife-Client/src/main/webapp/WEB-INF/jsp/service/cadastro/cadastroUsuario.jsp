@@ -118,7 +118,7 @@
 							</c:if>
 						</div>-->
 						<div class="form-group   text-danger" align="left">
-							<br /> <label for="exampleInputEstado">Estado</label> <select
+							<br /> <label for="exampleInputEstado">Unidade da Federação</label> <select
 								name="estado">
 								<option value="AC">Acre</option>
 								<option value="AL">Alagoas</option>
@@ -151,7 +151,7 @@
 						</div>
 
 						<div class="form-group   text-danger" align="left">
-							<br /> <label for="exampleInputCidade">Cidade</label> <input
+							<br /> <label for="exampleInputCidade">Município</label> <input
 								type="string" class="form-control" name="cidade" required="true"
 								value="${usuario.cidade}" id="Cidade"
 								placeholder="Santa Rita do Sapucaí">
@@ -161,7 +161,7 @@
 						</div>
 
 						<div class="form-group   text-danger" align="left">
-							<br /> <label for="exampleInputCEP">Cep</label> <input
+							<br /> <label for="exampleInputCEP">CEP</label> <input
 								type="string" required="true" class="form-control" name="cep"
 								value="${usuario.cep}" id="exampleInputCEP"
 								placeholder="37540-000">

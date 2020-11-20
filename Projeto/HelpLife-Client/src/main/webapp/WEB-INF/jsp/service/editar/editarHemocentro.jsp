@@ -123,7 +123,7 @@
 					</div>
 					 -->
 					<div class="form-group   text-danger" align="left">
-						<label for="exampleInputEstado" >Estado</label> 
+						<label for="exampleInputEstado" >Unidade da Federação</label> 
 						<select name="estado" id ="estado_editar_usuario" onSubmit="selectByText(${usuarioLogado.estado})">
 								<option value="AC">Acre</option>
 								<option value="AL">Alagoas</option>
@@ -165,7 +165,7 @@
 						</c:if>
 					</div>
 					<div class="form-group   text-danger" align="left">
-						<label for="exampleInputCidade">Cidade</label> <input type="city"
+						<label for="exampleInputCidade">Município</label> <input type="city"
 							class="form-control" name="cidade"
 							value="${usuarioLogado.cidade}" id="exampleInputCidade"
 							placeholder="Santa Rita do Sapucaí" required="true">

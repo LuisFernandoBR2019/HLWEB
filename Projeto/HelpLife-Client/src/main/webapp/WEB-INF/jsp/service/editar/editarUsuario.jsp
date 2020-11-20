@@ -153,7 +153,7 @@
 						  -->
 						<br />
 						<div class="form-group   text-danger" align="left" >
-							<label for="exampleInputEstado">Estado</label> 
+							<label for="exampleInputEstado">Unidade da Federação</label> 
 							 <select id ="estado_editar_usuario"  name="estado">
 								<option value="AC">Acre</option>
 								<option value="AL">Alagoas</option>
@@ -194,7 +194,7 @@
 						</div>
 						<br />
 						<div class="form-group   text-danger" align="left">
-							<label for="exampleInputCidade">Cidade</label> <input type="city"
+							<label for="exampleInputCidade">Município</label> <input type="city"
 								class="form-control" name="cidade"
 								value="${usuarioLogado.cidade}" id="exampleInputCidade"
 								placeholder="Santa Rita do Sapucaí" required="true">
@@ -204,7 +204,7 @@
 						</div>
 						<br />
 						<div class="form-group   text-danger" align="left">
-							<label for="exampleInputCEP">Cep</label> <input type="cep"
+							<label for="exampleInputCEP">CEP</label> <input type="cep"
 								class="form-control" name="cep" value="${usuarioLogado.cep}"
 								id="exampleInputCEP" placeholder="37540000" required="true">
 							<c:if test="${not empty erro.cep}">

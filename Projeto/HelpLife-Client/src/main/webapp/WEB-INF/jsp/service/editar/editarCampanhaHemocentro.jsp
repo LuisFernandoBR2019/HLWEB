@@ -88,7 +88,7 @@
 						placeholder="Data limite" required="true">
 				</div>
 				<div class="form-group">
-						<label for="exampleInputTipoSanguineo">Tipo Sanguineo</label>
+						<label for="exampleInputTipoSanguineo">Tipo sanguíneo</label>
 						<div class="form-check">
 							<c:forEach items="${tipoSanguineoList}" var="tipoSanguineo">
 								<c:set var="selecionado" value="false" scope="request" />

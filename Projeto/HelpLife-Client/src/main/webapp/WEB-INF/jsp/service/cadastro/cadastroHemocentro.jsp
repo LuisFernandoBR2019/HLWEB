@@ -76,7 +76,7 @@
 						</div>
 
 						<div class="form-group   text-danger" align="left">
-							<br /> <label for="exampleInputPhone">Telefone</label> <input
+							<br /> <label for="exampleInputPhone">Número de telefone</label> <input
 								type="string" class="form-control" name="telefone"
 								required="true" value="${hemocentro.telefone}"
 								id="exampleInputPhone" placeholder="035 99700 8080">
@@ -116,7 +116,7 @@
 							</c:if>
 						</div>-->
 						<div class="form-group   text-danger" align="left">
-							<br /> <label for="exampleInputEstado">Estado</label> <select
+							<br /> <label for="exampleInputEstado">Unidade da Federação</label> <select
 								name="estado">
 								<option value="AC">Acre</option>
 								<option value="AL">Alagoas</option>
@@ -148,7 +148,7 @@
 							</select>
 						</div>
 						<div class="form-group   text-danger" align="left">
-							<br /> <label for="exampleInputCidade">Cidade</label> <input
+							<br /> <label for="exampleInputCidade">Município</label> <input
 								type="string" class="form-control" name="cidade" required="true"
 								value="${hemocentro.cidade}" id="exampleInputCidade"
 								placeholder="Santa Rita do Sapucaí">
@@ -158,7 +158,7 @@
 						</div>
 
 						<div class="form-group   text-danger" align="left">
-							<br /> <label for="exampleInputCEP">Cep</label> <input
+							<br /> <label for="exampleInputCEP">CEP</label> <input
 								type="string" class="form-control" name="cep" required="true"
 								value="${hemocentro.cep}" id="exampleInputCEP"
 								placeholder="37540-000">
